@@ -3,17 +3,18 @@ module.exports = {
   env: {
     node: true
   },
-  'extends': [
+  extends: [
     'plugin:vue/essential',
-    'eslint:recommended',
+    // '@vue/standard',
+    // 'eslint:recommended',
     '@vue/typescript/recommended'
   ],
   parserOptions: {
     ecmaVersion: 2020
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
   overrides: [
     {
@@ -22,7 +23,7 @@ module.exports = {
         '**/tests/unit/**/*.spec.{j,t}s?(x)'
       ],
       env: {
-        mocha: true
+        jest: true
       }
     }
   ]
